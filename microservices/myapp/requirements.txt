@@ -1,0 +1,7 @@
+connexion == 1.1.9
+python_dateutil == 2.6.0
+setuptools >= 21.0.0
+wordsegment==1.1.6
+autocorrect==0.3.0
+nltk==3.2.3
+requests==2.18.4

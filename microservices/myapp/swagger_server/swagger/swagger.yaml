@@ -1,0 +1,78 @@
+---
+swagger: "2.0"
+info:
+  description: "Your very own did you mean feature in Google Search"
+  version: "0.0.1"
+  title: "Did You Mean API"
+host: "localhost:8080"
+basePath: "/v1"
+schemes:
+- "http"
+- "https"
+paths:
+  /dym:
+    get:
+      summary: "does spell correction and word segmentation on payload."
+      description: "See more [Spell Checker](https://en.wikipedia.org/wiki/Spell_checker),\
+        \ [Text Segmentation](https://en.wikipedia.org/wiki/Text_segmentation)"
+      operationId: "dym_get"
+      parameters:
+      - name: "payload"
+        in: "query"
+        description: "Payload"
+        required: true
+        type: "string"
+      - name: "spell"
+        in: "query"
+        description: "Do/Don't Spelling Correction on payload"
+        required: true
+        type: "boolean"
+      - name: "segment"
+        in: "query"
+        description: "Do/Don't word segmentation on payload"
+        required: true
+        type: "boolean"
+      responses:
+        200:
+          description: "A DYM Response Object"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
+    post:
+      summary: "does spell correction and word segmentation on payload."
+      description: "See more [Spell Checker](https://en.wikipedia.org/wiki/Spell_checker),\
+        \ [Text Segmentation](https://en.wikipedia.org/wiki/Text_segmentation)"
+      operationId: "dym_post"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      parameters:
+      - name: "payload"
+        in: "formData"
+        description: "Payload"
+        required: true
+        type: "string"
+      - name: "spell"
+        in: "formData"
+        description: "Do/Don't Spelling Correction on payload"
+        required: true
+        type: "boolean"
+      - name: "segment"
+        in: "formData"
+        description: "Do/Don't word segmentation on payload"
+        required: true
+        type: "boolean"
+      responses:
+        200:
+          description: "A DYM Response Object"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
+definitions:
+  inline_response_200:
+    properties:
+      dym-word:
+        type: "string"
+        description: "payload after doing Did you mean on it"
+      dym-done:
+        type: "boolean"
+        description: "wheather payload changed or not"
