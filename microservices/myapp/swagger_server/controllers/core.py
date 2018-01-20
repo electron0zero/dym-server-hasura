@@ -21,7 +21,7 @@ def segment_and_correct(payload, spelling, segmenting):
 
     final_text = " ".join(final_tokens)
     is_equal = is_it_equal(payload, final_text)
-    return json.dumps({'dym-word': final_text, 'dym-done': not is_equal})
+    return {'dym-word': final_text, 'dym-done': not is_equal}
 
 
 def segment_tokens(tokens):

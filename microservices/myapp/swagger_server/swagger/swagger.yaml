@@ -4,6 +4,7 @@ info:
   description: "Your very own did you mean feature in Google Search"
   version: "0.0.1"
   title: "Did You Mean API"
+host: "myapp.actualize97.hasura-app.io"
 host: "localhost:8080"
 basePath: "/v1"
 schemes:
@@ -76,3 +77,6 @@ definitions:
       dym-done:
         type: "boolean"
         description: "wheather payload changed or not"
+    example:
+      dym-word: "dym-word"
+      dym-done: true
