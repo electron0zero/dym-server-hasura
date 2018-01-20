@@ -5,10 +5,8 @@ info:
   version: "0.0.1"
   title: "Did You Mean API"
 host: "myapp.actualize97.hasura-app.io"
-host: "localhost:8080"
 basePath: "/v1"
 schemes:
-- "http"
 - "https"
 paths:
   /dym:
