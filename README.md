@@ -4,8 +4,8 @@
 
 [Normal Docker version can be found here](https://github.com/electron0zero/dym-server)
 
-dym - Did you mean, This is simple mircoservice that does spellling correction and word segmentaion.
-If you combine both you get something similer to Google's `Did you mean` kind of service.
+Did you mean(dym) is simple microservice that does spelling correction and word segmentation.
+If you combine both you get something similar to Google's `Did you mean` kind of service.
 
 This API Server is using Flask(Python Microframework) & Swagger 2.0(aka Open API)
 
